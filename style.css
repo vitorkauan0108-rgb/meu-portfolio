@@ -1,0 +1,441 @@
+:root {
+  --primary-green: #00ff88; /* Verde neon que você pediu */
+  --bg-black: #0a0a0a; /* Preto profundo */
+  --card-bg: #1a1a1a; /* Cinza escuro para contraste */
+  --text-white: #ffffff;
+  --text-gray: #b0b0b0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  line-height: 1.6;
+}
+
+/* Navegação */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 10%;
+  background: rgba(10, 10, 10, 0.9);
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.logo span {
+  color: var(--primary-green);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  margin-left: 2rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-white);
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  color: var(--primary-green);
+}
+
+/* Seção Principal (Hero) */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 10%;
+  min-height: 80vh;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero-content h1 span {
+  color: var(--primary-green);
+}
+.hero-content p {
+  color: var(--text-gray);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.hero-image img {
+  width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+  border: 2px solid var(--primary-green);
+}
+
+.btn {
+  padding: 0.8rem 2rem;
+  background-color: var(--primary-green);
+  color: var(--bg-black);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #00cc6e;
+  transform: scale(1.05);
+}
+
+/* Projetos */
+.projects {
+  padding: 5rem 10%;
+  text-align: center;
+}
+.projects h2 {
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  border-bottom: 4px solid var(--primary-green);
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid #333;
+  color: var(--text-gray);
+}
+
+/* Responsividade para celular */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-image img {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+/* Animação de Surgimento Suave */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeito de Brilho Pulsante no Texto Verde */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px var(--primary-green);
+  }
+  50% {
+    text-shadow:
+      0 0 20px var(--primary-green),
+      0 0 30px var(--primary-green);
+  }
+  100% {
+    text-shadow: 0 0 5px var(--primary-green);
+  }
+}
+
+/* Aplicando as animações */
+.hero-content h1 {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero-content p {
+  animation: fadeInUp 1s ease-out 0.2s forwards; /* Delay de 0.2s */
+  opacity: 0; /* Começa invisível até a animação rodar */
+}
+
+.hero-image img {
+  animation: fadeInUp 1.2s ease-out 0.4s forwards;
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Efeito de Hover na Imagem (Interatividade) */
+.hero-image img:hover {
+  transform: scale(1.05) rotate(2deg);
+  filter: brightness(1.2);
+}
+
+.hero-content h1 span {
+  animation: glow 3s infinite alternate;
+}
+
+/* Efeito de Scroll Suave (Smooth Scroll) */
+html {
+  scroll-behavior: smooth;
+}
+/* --- SEÇÃO DE PROJETOS --- */
+
+.projects {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #fff;
+}
+
+.section-title span {
+  color: var(--primary-green);
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+/* Grid que organiza os cartões lado a lado */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Estilo do Cartão */
+.project-card {
+  background: #111; /* Fundo levemente mais claro que o preto total */
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #333;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Efeito de Brilho e Movimento ao passar o mouse */
+.project-card:hover {
+  border-color: var(--primary-green);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+}
+
+.card-icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-green);
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.project-card p {
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* Tags de tecnologia dentro do cartão */
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  background: rgba(0, 255, 136, 0.1);
+  color: var(--primary-green);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+}
+/* --- SEÇÃO DE CONTATO --- */
+
+.contact {
+  padding: 100px 10%;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    #0a0a0a,
+    #000
+  ); /* Degradê suave para o preto total */
+}
+
+.contact-text {
+  color: var(--text-gray);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Estilo Base dos Botões de Contato */
+.contact-btn {
+  padding: 15px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+}
+
+/* Botão LinkedIn / Verde Neon Principal */
+.contact-btn.linkedin {
+  background-color: transparent;
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+.contact-btn.linkedin:hover {
+  background-color: var(--primary-green);
+  color: #000;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+  transform: scale(1.05);
+}
+
+/* Botão GitHub / Branco Clean */
+.contact-btn.github {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+
+.contact-btn.github:hover {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+/* Botão E-mail / Estilo Preenchido */
+.contact-btn.email {
+  background-color: #222;
+  color: #fff;
+  border-color: #333;
+}
+
+.contact-btn.email:hover {
+  background-color: #333;
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+/* Ajuste para a Bio Bilíngue */
+.bio-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: left; /* Alinha o texto à esquerda para melhor leitura */
+}
+
+.bio-text {
+  flex: 1;
+  border-left: 2px solid #333; /* Uma linha sutil para separar os idiomas */
+  padding-left: 20px;
+}
+
+.bio-text.br {
+  border-left: 2px solid var(--primary-green); /* Destaque verde na versão PT-BR */
+}
+
+.bio-text p {
+  font-size: 0.95rem !important; /* Diminui um pouco a fonte para caber os dois lado a lado */
+  line-height: 1.6;
+  color: var(--text-gray);
+}
+
+/* Responsividade: No celular, os textos ficam um embaixo do outro */
+@media (max-width: 768px) {
+  .bio-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .bio-text {
+    border-left: none;
+    border-top: 1px solid #333;
+    padding: 20px 0 0 0;
+  }
+  .bio-text.br {
+    border-top: 1px solid var(--primary-green);
+  }
+}
+/* --- ESTILO DE BRILHO NEON PARA O NOME (Restauração Opção 3) --- */
+
+/* Efeito de Brilho Pulsante no Nome Verde */
+@keyframes neonGlow {
+  0% {
+    text-shadow:
+      0 0 5px rgba(0, 255, 136, 0.4),
+      0 0 10px rgba(0, 255, 136, 0.4);
+    color: rgba(0, 255, 136, 0.8);
+  }
+  100% {
+    text-shadow:
+      0 0 15px rgba(0, 255, 136, 0.9),
+      0 0 25px rgba(0, 255, 136, 0.9),
+      0 0 35px rgba(0, 255, 136, 0.9);
+    color: #fff; /* O centro da letra fica branco para o brilho parecer mais intenso */
+  }
+}
+
+/* Aplicando o brilho especificamente ao nome 'Vitor Kauan' no Hero Minimalista */
+.hero-content.minimalist h1 span {
+  color: var(--primary-green);
+  font-weight: bold;
+  /* Faz a animação neonGlow pulsar infinitamente */
+  animation: neonGlow 3s infinite alternate;
+  transition: 0.3s;
+}
+
+/* Efeito de Hover no Nome (Interatividade Extra) */
+.hero-content.minimalist h1 span:hover {
+  color: #fff;
+  text-shadow:
+    0 0 20px rgba(0, 255, 136, 1),
+    0 0 30px rgba(0, 255, 136, 1);
+  transform: scale(1.1); /* Aumenta levemente ao passar o mouse */
+}

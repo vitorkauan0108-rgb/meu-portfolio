@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vitor Kauan | QA & JavaScript Developer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Vitor<span>Kauan</span></div>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content minimalist">
+        <h1>Vitor <span>Kauan</span></h1>
+        <h2>QA & JavaScript Specialist</h2>
+
+        <div class="bio-container">
+          <div class="bio-text">
+            <p>
+              Currently, I'm taking a deep dive into the JavaScript ecosystem,
+              focusing my career on becoming a <strong>QA Analyst</strong>. I
+              believe that software quality starts with well-structured logic.
+              If you're looking for someone determined and constantly evolving,
+              let's connect!
+            </p>
+          </div>
+
+          <div class="bio-text br">
+            <p>
+              Atualmente, estou mergulhado no ecossistema JavaScript, focando
+              minha carreira para me tornar um <strong>Analista de QA</strong>.
+              Acredito que a qualidade de um software começa na lógica bem
+              estruturada. Se você busca alguém determinado e em constante
+              evolução, vamos conversar!
+            </p>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn">Get in Touch / Contato</a>
+      </div>
+      <div class="hero-image">
+        <img src="foto.png.png" alt="Vitor Kauan - Desenvolvedor JavaScript" />
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2 class="section-title">Latest <span>Projects</span></h2>
+
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="card-icon">JS</div>
+          <h3>Trybe Fundamentals</h3>
+          <p>
+            Developing applications using JavaScript, focusing on logic, loops,
+            and DOM manipulation.
+          </p>
+          <div class="tags">
+            <span>JavaScript</span>
+            <span>HTML/CSS</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-icon">QA</div>
+          <h3>Testing Mindset</h3>
+          <p>
+            Focusing on software quality, studying bug reports, and automation
+            basics to ensure excellence.
+          </p>
+          <div class="tags">
+            <span>Manual Testing</span>
+            <span>Logic</span>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="card-icon">WEB</div>
+          <h3>Dev Portfolio</h3>
+          <p>
+            Personal portfolio built with an interactive and minimalist dark
+            theme to showcase my evolution.
+          </p>
+          <div class="tags">
+            <span>Animations</span>
+            <span>Responsive</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 class="section-title">Let's <span>Connect</span></h2>
+      <p class="contact-text">
+        I'm always open to discussing new projects, creative ideas, or
+        opportunities to be part of your vision.
+      </p>
+
+      <div class="contact-buttons">
+        <a
+          href="https://linkedin.com/in/vitor-kauan-49b4332a3"
+          target="_blank"
+          class="contact-btn linkedin"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          href="https://github.com/vitorkauan0108-rgb"
+          target="_blank"
+          class="contact-btn github"
+        >
+          GitHub
+        </a>
+
+       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vitorkauan0108@gmail.com" target="_blank" class="contact-btn email">
+    Send Message
+</a>
+        </a>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2026 Vitor Kauan - Built with JavaScript Mindset</p>
+    </footer>
+    <script>
+      // Função para observar quando os elementos entram na tela
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      });
+
+      // Seleciona todos os cartões de projeto e observa cada um
+      const hiddenElements = document.querySelectorAll(".project-card");
+      hiddenElements.forEach((el) => {
+        // Adicionamos uma classe inicial via JS para controle
+        el.style.opacity = "0";
+        el.style.transform = "translateX(-50px)";
+        el.style.transition = "all 0.8s ease-out";
+        observer.observe(el);
+      });
+
+      // Classe que o CSS vai usar quando o elemento for "revelado"
+      document.addEventListener("scroll", () => {
+        hiddenElements.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 100) {
+            el.style.opacity = "1";
+            el.style.transform = "translateX(0)";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
