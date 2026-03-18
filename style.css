@@ -439,3 +439,73 @@ html {
     0 0 30px rgba(0, 255, 136, 1);
   transform: scale(1.1); /* Aumenta levemente ao passar o mouse */
 }
+/* Ajuste para o Card não vazar conteúdo */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Empurra as tags para o final do card */
+  height: auto; /* Permite que o card cresça com o texto */
+  min-height: 380px; /* Mantém um tamanho padrão bonito */
+  padding: 25px;
+  background: #111; /* Cor de fundo do card */
+  border: 1px solid #333; /* Borda sutil */
+  border-radius: 15px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+/* Garante que o texto 'EM BREVE' brilhe e tenha espaço */
+.project-card p {
+  color: #00ff00;
+  font-weight: bold;
+  margin: 10px 0;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+}
+
+/* Ajuste das tags para não saírem do card */
+.tags {
+  margin-top: auto; /* Garante que fiquem no rodapé do card */
+  display: flex;
+  flex-wrap: wrap; /* Se não couber, pula linha em vez de vazar */
+  gap: 8px;
+  padding-top: 15px;
+}
+
+.tags span {
+  background: rgba(0, 255, 0, 0.1);
+  color: #00ff00;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+}
+/* Ajustes para telas de celular (até 768px) */
+@media (max-width: 768px) {
+  .project-grid {
+    display: flex;
+    flex-direction: column; /* Empilha os cards um embaixo do outro */
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .project-card {
+    width: 100%; /* O card ocupa a largura da tela */
+    max-width: 350px; /* Mas não fica gigante em tablets */
+    min-height: auto; /* Deixa o card se ajustar ao texto no mobile */
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: 2rem; /* Diminui um pouco o título para não quebrar linha feio */
+    text-align: center;
+  }
+
+  /* Se você tiver um menu de navegação, pode centralizar aqui também */
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
