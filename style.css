@@ -534,3 +534,33 @@ html {
   color: #000;
   box-shadow: 0 0 10px #00ff88;
 }
+.btn-contact {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  margin: 10px;
+}
+.btn-contact {
+  display: inline-block;
+  padding: 8px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  margin: 8px;
+}
+
+.whatsapp {
+  border: 2px solid #25d366; /* Verde do Zap */
+  color: #25d366;
+  background: transparent;
+}
+
+.whatsapp:hover {
+  background-color: #25d366;
+  color: #000; /* Texto preto quando passa o mouse */
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
+}
